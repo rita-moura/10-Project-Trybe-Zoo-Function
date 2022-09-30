@@ -1,3 +1,4 @@
+const { species } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
 // coloquei um id como parametro retorna [especies]
@@ -8,10 +9,13 @@ const data = require('../data/zoo_data');
 // dentro desse array deve ter os animais da mesma especie
 
 function getSpeciesByIds(...ids) {
-  return ids.map(({ species }) => console.log(species));
+  const arraySpecie = [];
+  return data.species.forEach((element) => {
+    if (element.id === ids) {
+      return arraySpecie.push(species);
+    }
+  });
 }
-getSpeciesByIds(data);
-
-console.log(data);
+console.log(getSpeciesByIds('bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5'));
 
 module.exports = getSpeciesByIds;
