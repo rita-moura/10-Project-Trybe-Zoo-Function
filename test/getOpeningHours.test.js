@@ -12,6 +12,15 @@ const object = {
 
 describe('Testes da função getOpeningHours', () => {
   test('retona objeto se não for passado parametro', () => {
-    expect(getOpeningHours()).toBe(object);
+    expect(getOpeningHours()).toEqual(object);
+  });
+  test('retona a string esperada para Monday', () => {
+    expect(getOpeningHours('Monday', '09:00-AM')).toEqual('The zoo is closed');
+  });
+  test('retona a string esperada para Tuesday', () => {
+    expect(getOpeningHours('Tuesday', '09:00-AM')).toEqual('The zoo is open');
+  });
+  test('retona a string esperada para Wednesday', () => {
+    expect(getOpeningHours('Wednesday', '09:00-PM')).toEqual('The zoo is closed');
   });
 });
