@@ -23,4 +23,22 @@ describe('Testes da função getOpeningHours', () => {
   test('retona a string esperada para Wednesday', () => {
     expect(getOpeningHours('Wednesday', '09:00-PM')).toEqual('The zoo is closed');
   });
+  test('retona a string esperada para Thu', () => {
+    expect(() => getOpeningHours('Thu', '09:00-AM')).toThrow();
+  });
+  test('retona a string esperada Friday', () => {
+    expect(() => getOpeningHours('Friday', '09:00-ZM')).toThrow();
+  });
+  test('retona a string esperada Saturday', () => {
+    expect(() => getOpeningHours('Saturday', 'c9:00-AM')).toThrow();
+  });
+  test('retona a string esperada Sunday', () => {
+    expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrow();
+  });
+  test('retona a string esperada Monday', () => {
+    expect(() => getOpeningHours('Monday', '13:00-AM')).toThrow();
+  });
+  test('retona a string esperada Tuesday', () => {
+    expect(() => getOpeningHours('Tuesday', '09:60-AM')).toThrow();
+  });
 });
