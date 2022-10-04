@@ -13,5 +13,5 @@ function getOldestFromFirstSpecies(id) {
   // console.log('chave e valor do animal mais velho que o colaborador cuida', animalsId);
   return Object.values(animalsId);
 }
-console.log(getOldestFromFirstSpecies('4b40a139-d4dc-4f09-822d-ec25e819a5ad'));
+// console.log(getOldestFromFirstSpecies('4b40a139-d4dc-4f09-822d-ec25e819a5ad'));
 module.exports = getOldestFromFirstSpecies;
