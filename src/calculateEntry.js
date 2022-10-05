@@ -16,15 +16,13 @@ function countEntrants(entrants) {
 }
 
 function calculateEntry(entrants) {
-  if (!entrants || Object.values(entrants).length === 0) return 0;
-  const child = entrants.filter((e) => e.age < 18).length * prices.child;
-  const adult = entrants.filter((e) => e.age >= 18 && e.age < 50).length * prices.adult;
-  const senior = entrants.filter((e) => e.age >= 50).length * prices.senior;
+  if (!entrants || Object.entries(entrants).length === 0) return 0;
+  const objecto = Object.values(countEntrants(entrants)).flat(1);
+  const child = objecto[0] * prices.child;
+  const adult = objecto[1] * prices.adult;
+  const senior = objecto[2] * prices.senior;
   const sum = child + adult + senior;
-  console.log(sum);
   return sum;
 }
-
-calculateEntry();
 
 module.exports = { calculateEntry, countEntrants };
